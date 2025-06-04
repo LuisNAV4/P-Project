@@ -29,13 +29,6 @@
   --gray-700: #374151;
   --gray-800: #1f2937;
   --gray-900: #111827;
-  
-  /* Variables personalizadas para facilitar cambios */
-  --brand-primary: var(--primary-rose);
-  --brand-secondary: var(--primary-purple);
-  --brand-accent: var(--primary-pink);
-  --bg-gradient-start: var(--rose-50);
-  --bg-gradient-end: var(--purple-50);
 }
 
 #root {
@@ -81,42 +74,47 @@
   color: #888;
 }
 
-/* Utilidades para usar las variables de colores */
+/* Clases personalizadas para los colores */
 .text-brand-primary {
-  color: var(--brand-primary) !important;
+  color: var(--primary-rose);
 }
 
 .text-brand-secondary {
-  color: var(--brand-secondary) !important;
-}
-
-.bg-brand-primary {
-  background-color: var(--brand-primary) !important;
-}
-
-.bg-brand-secondary {
-  background-color: var(--brand-secondary) !important;
-}
-
-.border-brand-primary {
-  border-color: var(--brand-primary) !important;
-}
-
-.bg-brand-gradient {
-  background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary)) !important;
+  color: var(--primary-purple);
 }
 
 .text-brand-gradient {
-  background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
+  background: linear-gradient(to right, var(--primary-rose), var(--primary-purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
+}
+
+.bg-brand-primary {
+  background-color: var(--primary-rose);
+}
+
+.bg-brand-secondary {
+  background-color: var(--primary-purple);
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(to right, var(--primary-rose), var(--primary-purple));
 }
 
 .bg-gradient-brand {
-  background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--white), var(--bg-gradient-end)) !important;
+  background: linear-gradient(135deg, var(--rose-50) 0%, var(--white) 50%, var(--purple-50) 100%);
+}
+
+.border-brand-primary {
+  border-color: var(--primary-rose);
 }
 
 .hover-brand-primary:hover {
-  color: var(--brand-primary) !important;
+  color: var(--primary-rose);
+}
+
+.hover-brand-bg:hover {
+  background-color: var(--rose-50);
 }
