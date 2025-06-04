@@ -53,22 +53,19 @@ const Index = () => {
           <nav className="hidden md:flex space-x-6">
             <button 
               onClick={() => scrollToSection('servicios')} 
-              className="text-gray-700 transition-colors"
-              style={{ '&:hover': { color: 'var(--brand-primary)' } }}
+              className="text-gray-700 hover:text-rose-500 transition-colors"
             >
               Servicios
             </button>
             <button 
               onClick={() => scrollToSection('catalogo')} 
-              className="text-gray-700 transition-colors"
-              style={{ '&:hover': { color: 'var(--brand-primary)' } }}
+              className="text-gray-700 hover:text-rose-500 transition-colors"
             >
               Catálogo
             </button>
             <button 
               onClick={() => scrollToSection('contacto')} 
-              className="text-gray-700 transition-colors"
-              style={{ '&:hover': { color: 'var(--brand-primary)' } }}
+              className="text-gray-700 hover:text-rose-500 transition-colors"
             >
               Contacto
             </button>
