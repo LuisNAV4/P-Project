@@ -1,4 +1,3 @@
-
 import { Scissors, Clock, MapPin, Phone, Star, Users, Sparkles, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -31,21 +30,48 @@ const Index = () => {
     }
   ];
 
-  const testimonials = [
+  const hairStyles = [
     {
-      name: "María González",
-      comment: "¡Increíble servicio! Mi cabello nunca se había visto tan bien.",
-      rating: 5
+      id: 1,
+      name: "Corte Bob Moderno",
+      category: "Cortes Clásicos",
+      description: "Elegante corte bob que realza la forma del rostro",
+      image: "/placeholder.svg"
     },
     {
-      name: "Ana Rodríguez",
-      comment: "Profesionales excepcionales, siempre salgo encantada.",
-      rating: 5
+      id: 2,
+      name: "Ondas Naturales",
+      category: "Peinados",
+      description: "Ondas suaves y naturales para un look romántico",
+      image: "/placeholder.svg"
     },
     {
-      name: "Carmen López",
-      comment: "El mejor lugar para cuidar tu cabello. Totalmente recomendado.",
-      rating: 5
+      id: 3,
+      name: "Mechas Balayage",
+      category: "Coloración",
+      description: "Técnica de coloración para un efecto natural y luminoso",
+      image: "/placeholder.svg"
+    },
+    {
+      id: 4,
+      name: "Pixie Cut",
+      category: "Cortes Modernos",
+      description: "Corte corto y moderno para un look sofisticado",
+      image: "/placeholder.svg"
+    },
+    {
+      id: 5,
+      name: "Trenzas Bohemias",
+      category: "Peinados",
+      description: "Trenzas elaboradas perfectas para eventos especiales",
+      image: "/placeholder.svg"
+    },
+    {
+      id: 6,
+      name: "Highlights Rubios",
+      category: "Coloración",
+      description: "Mechas rubias que iluminan tu cabello naturalmente",
+      image: "/placeholder.svg"
     }
   ];
 
@@ -163,30 +189,46 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonios" className="py-16 px-4">
+      {/* Hair Styles Catalog */}
+      <section id="catalogo" className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h3 className="text-4xl font-bold mb-4 bg-gradient-to-r from-rose-600 to-purple-600 bg-clip-text text-transparent">
-              Lo Que Dicen Nuestros Clientes
+              Catálogo de Estilos
             </h3>
-            <p className="text-xl text-gray-600">La satisfacción de nuestros clientes es nuestra mayor recompensa</p>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Descubre nuestra variedad de cortes, peinados y tratamientos. Cada estilo está diseñado para realzar tu belleza única.
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-0 bg-white/80 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {hairStyles.map((style) => (
+              <Card key={style.id} className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
+                <div className="relative h-64 bg-gradient-to-br from-rose-100 to-purple-100 flex items-center justify-center">
+                  <img 
+                    src={style.image} 
+                    alt={style.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <span className="text-sm font-medium text-rose-600">{style.category}</span>
                   </div>
-                  <p className="text-gray-600 mb-4 italic">"{testimonial.comment}"</p>
-                  <p className="font-bold text-rose-600">- {testimonial.name}</p>
+                </div>
+                <CardContent className="p-6">
+                  <h4 className="text-xl font-bold mb-2 text-gray-800">{style.name}</h4>
+                  <p className="text-gray-600 mb-4">{style.description}</p>
+                  <Button className="w-full bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200">
+                    Ver Más Detalles
+                  </Button>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="border-rose-300 text-rose-600 hover:bg-rose-50 transform hover:scale-105 transition-all duration-200">
+              Ver Todos los Estilos
+            </Button>
           </div>
         </div>
       </section>
