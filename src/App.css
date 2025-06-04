@@ -83,21 +83,40 @@
 
 /* Utilidades para usar las variables de colores */
 .text-brand-primary {
-  color: var(--brand-primary);
+  color: var(--brand-primary) !important;
 }
 
 .text-brand-secondary {
-  color: var(--brand-secondary);
+  color: var(--brand-secondary) !important;
 }
 
 .bg-brand-primary {
-  background-color: var(--brand-primary);
+  background-color: var(--brand-primary) !important;
 }
 
 .bg-brand-secondary {
-  background-color: var(--brand-secondary);
+  background-color: var(--brand-secondary) !important;
 }
 
 .border-brand-primary {
-  border-color: var(--brand-primary);
+  border-color: var(--brand-primary) !important;
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary)) !important;
+}
+
+.text-brand-gradient {
+  background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--white), var(--bg-gradient-end)) !important;
+}
+
+.hover-brand-primary:hover {
+  color: var(--brand-primary) !important;
 }

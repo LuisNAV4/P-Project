@@ -1,3 +1,4 @@
+
 import { Scissors, Clock, MapPin, Phone, Star, Users, Sparkles, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -35,47 +36,39 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: `linear-gradient(to bottom right, var(--bg-gradient-start), var(--white), var(--bg-gradient-end))` }}>
+    <div className="min-h-screen bg-gradient-brand">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2 cursor-pointer" onClick={scrollToTop}>
-            <Scissors className="h-8 w-8" style={{ color: 'var(--brand-primary)' }} />
-            <h1 className="text-2xl font-bold" style={{ 
-              background: `linear-gradient(to right, var(--brand-primary), var(--brand-secondary))`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
+            <Scissors className="h-8 w-8 text-brand-primary" />
+            <h1 className="text-2xl font-bold text-brand-gradient">
               Bella Estilo
             </h1>
           </div>
           <nav className="hidden md:flex space-x-6">
             <button 
               onClick={() => scrollToSection('servicios')} 
-              className="text-gray-700 hover:text-rose-500 transition-colors"
+              className="text-gray-700 hover-brand-primary transition-colors"
             >
               Servicios
             </button>
             <button 
               onClick={() => scrollToSection('catalogo')} 
-              className="text-gray-700 hover:text-rose-500 transition-colors"
+              className="text-gray-700 hover-brand-primary transition-colors"
             >
               Catálogo
             </button>
             <button 
               onClick={() => scrollToSection('contacto')} 
-              className="text-gray-700 hover:text-rose-500 transition-colors"
+              className="text-gray-700 hover-brand-primary transition-colors"
             >
               Contacto
             </button>
           </nav>
           <Button 
             onClick={handleReservarCita}
-            style={{ 
-              background: `linear-gradient(to right, var(--brand-primary), var(--brand-secondary))`,
-            }}
-            className="hover:opacity-90"
+            className="bg-brand-gradient hover:opacity-90 text-white"
           >
             Reservar Cita
           </Button>
@@ -86,20 +79,10 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
           <div className="animate-fade-in">
-            <h2 className="text-5xl md:text-7xl font-bold mb-6" style={{ 
-              background: `linear-gradient(to right, var(--brand-primary), var(--brand-secondary), var(--brand-accent))`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-brand-gradient">
               Tu Belleza,
             </h2>
-            <h3 className="text-4xl md:text-6xl font-bold mb-8" style={{ 
-              background: `linear-gradient(to right, var(--brand-secondary), var(--brand-primary))`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
+            <h3 className="text-4xl md:text-6xl font-bold mb-8 text-brand-gradient">
               Nuestra Pasión
             </h3>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -110,10 +93,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 onClick={handleLlamarAhora}
-                style={{ 
-                  background: `linear-gradient(to right, var(--brand-primary), var(--brand-secondary))`,
-                }}
-                className="transform hover:scale-105 transition-all duration-200"
+                className="bg-brand-gradient transform hover:scale-105 transition-all duration-200 text-white"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Llamar Ahora
@@ -122,11 +102,7 @@ const Index = () => {
                 size="lg" 
                 variant="outline" 
                 onClick={() => scrollToSection('servicios')}
-                style={{ 
-                  borderColor: 'var(--brand-primary)',
-                  color: 'var(--brand-primary)'
-                }}
-                className="hover:bg-rose-50 transform hover:scale-105 transition-all duration-200"
+                className="border-brand-primary text-brand-primary hover:bg-rose-50 transform hover:scale-105 transition-all duration-200"
               >
                 Ver Servicios
               </Button>
@@ -139,12 +115,7 @@ const Index = () => {
       <section id="servicios" className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold mb-4" style={{ 
-              background: `linear-gradient(to right, var(--brand-primary), var(--brand-secondary))`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
+            <h3 className="text-4xl font-bold mb-4 text-brand-gradient">
               Nuestros Servicios
             </h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -158,18 +129,12 @@ const Index = () => {
               return (
                 <Card key={index} className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="mb-4 inline-block p-3 rounded-full group-hover:scale-110 transition-transform duration-300"
-                         style={{ background: `linear-gradient(to bottom right, var(--rose-100), var(--purple-100))` }}>
-                      <IconComponent className="h-8 w-8" style={{ color: 'var(--brand-primary)' }} />
+                    <div className="mb-4 inline-block p-3 rounded-full group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br from-rose-100 to-purple-100">
+                      <IconComponent className="h-8 w-8 text-brand-primary" />
                     </div>
                     <h4 className="text-xl font-bold mb-2 text-gray-800">{service.title}</h4>
                     <p className="text-gray-600 mb-4">{service.description}</p>
-                    <p className="text-2xl font-bold" style={{ 
-                      background: `linear-gradient(to right, var(--brand-primary), var(--brand-secondary))`,
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text'
-                    }}>
+                    <p className="text-2xl font-bold text-brand-gradient">
                       {service.price}
                     </p>
                   </CardContent>
@@ -181,7 +146,7 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4" style={{ background: `linear-gradient(to right, var(--rose-100)/50, var(--purple-100)/50)` }}>
+      <section className="py-16 px-4 bg-gradient-to-r from-rose-100/50 to-purple-100/50">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center group">
@@ -215,12 +180,7 @@ const Index = () => {
       <section id="catalogo" className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold mb-4" style={{ 
-              background: `linear-gradient(to right, var(--brand-primary), var(--brand-secondary))`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
+            <h3 className="text-4xl font-bold mb-4 text-brand-gradient">
               Catálogo de Estilos
             </h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -231,25 +191,21 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {hairStyles.map((style) => (
               <Card key={style.id} className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
-                <div className="relative h-64 flex items-center justify-center"
-                     style={{ background: `linear-gradient(to bottom right, var(--rose-100), var(--purple-100))` }}>
+                <div className="relative h-64 flex items-center justify-center bg-gradient-to-br from-rose-100 to-purple-100">
                   <img 
                     src={style.image} 
                     alt={style.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-sm font-medium" style={{ color: 'var(--brand-primary)' }}>{style.category}</span>
+                    <span className="text-sm font-medium text-brand-primary">{style.category}</span>
                   </div>
                 </div>
                 <CardContent className="p-6">
                   <h4 className="text-xl font-bold mb-2 text-gray-800">{style.name}</h4>
                   <p className="text-gray-600 mb-4">{style.description}</p>
                   <Button 
-                    className="w-full transform hover:scale-105 transition-all duration-200"
-                    style={{ 
-                      background: `linear-gradient(to right, var(--brand-primary), var(--brand-secondary))`,
-                    }}
+                    className="w-full transform hover:scale-105 transition-all duration-200 bg-brand-gradient text-white"
                   >
                     Ver Más Detalles
                   </Button>
@@ -262,11 +218,7 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              style={{ 
-                borderColor: 'var(--brand-primary)',
-                color: 'var(--brand-primary)'
-              }}
-              className="hover:bg-rose-50 transform hover:scale-105 transition-all duration-200"
+              className="border-brand-primary text-brand-primary hover:bg-rose-50 transform hover:scale-105 transition-all duration-200"
             >
               Ver Todos los Estilos
             </Button>
@@ -275,7 +227,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-16 px-4 text-white" style={{ background: `linear-gradient(to bottom right, var(--brand-primary), var(--brand-secondary))` }}>
+      <section id="contacto" className="py-16 px-4 text-white bg-brand-gradient">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -325,8 +277,7 @@ const Index = () => {
                   className="w-full p-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 placeholder-white/70 text-white resize-none"
                 ></textarea>
                 <Button 
-                  className="w-full text-rose-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
-                  style={{ backgroundColor: 'var(--white)' }}
+                  className="w-full bg-white text-rose-600 hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
                 >
                   Enviar Mensaje
                 </Button>
@@ -340,7 +291,7 @@ const Index = () => {
       <footer className="bg-gray-900 text-white py-8 px-4">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4 cursor-pointer" onClick={scrollToTop}>
-            <Scissors className="h-6 w-6" style={{ color: 'var(--brand-accent)' }} />
+            <Scissors className="h-6 w-6 text-brand-accent" />
             <span className="text-xl font-bold">Bella Estilo</span>
           </div>
           <p className="text-gray-400 mb-4">
