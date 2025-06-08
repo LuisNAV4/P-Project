@@ -3,8 +3,10 @@ import { Scissors, Clock, MapPin, Phone, Star, Users, Sparkles, Heart } from "lu
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getServices, getHairStyles } from "@/scripts/script1.js";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   // ...dentro del componente Index...
   const apiServices = null; // o datos de API
   const apiHairStyles = null; // o datos de API
@@ -33,6 +35,10 @@ const Index = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleVerTodosLosEstilos = () => {
+    navigate('/estilos');
   };
 
   return (
@@ -177,18 +183,18 @@ const Index = () => {
       </section>
 
       {/* Hair Styles Catalog */}
-      <section id="catalogo" className="py-16 px-4">
+      <section id="catalogo" className="py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold mb-4 text-brand-gradient">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl md:text-5xl font-bold mb-6 text-brand-gradient relative z-10">
               Catálogo de Estilos
             </h3>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-4 relative z-10">
               Descubre nuestra variedad de cortes, peinados y tratamientos. Cada estilo está diseñado para realzar tu belleza única.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {hairStyles.map((style) => (
               <Card key={style.id} className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
                 <div className="relative h-64 flex items-center justify-center bg-gradient-to-br from-rose-100 to-purple-100">
@@ -214,11 +220,11 @@ const Index = () => {
             ))}
           </div>
           
-          <div className="text-center mt-12">
+          <div className="text-center">
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-brand-primary text-brand-primary hover:bg-rose-50 transform hover:scale-105 transition-all duration-200"
+              onClick={handleVerTodosLosEstilos}
+              className="bg-brand-gradient hover:opacity-90 text-white transform hover:scale-105 transition-all duration-200"
             >
               Ver Todos los Estilos
             </Button>
