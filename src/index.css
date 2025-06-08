@@ -1,81 +1,88 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    /* Colores del sistema de peluquería */
+    --brand-rose-primary: #f43f5e;
+    --brand-purple-primary: #a21caf;
+    --brand-pink-primary: #ec4899;
+    
+    /* Gradientes y tonos de rosa */
+    --brand-rose-50: #fff1f2;
+    --brand-rose-100: #ffe4e6;
+    --brand-rose-300: #fda4af;
+    --brand-rose-400: #fb7185;
+    --brand-rose-500: #f43f5e;
+    --brand-rose-600: #e11d48;
+    --brand-rose-700: #be123c;
+    
+    /* Gradientes y tonos de púrpura */
+    --brand-purple-50: #faf5ff;
+    --brand-purple-100: #f3e8ff;
+    --brand-purple-500: #a21caf;
+    --brand-purple-600: #9333ea;
+    --brand-purple-700: #7e22ce;
+    
+    /* Colores base del sistema */
+    --brand-white: #ffffff;
+    --brand-gray-100: #f3f4f6;
+    --brand-gray-400: #9ca3af;
+    --brand-gray-600: #4b5563;
+    --brand-gray-700: #374151;
+    --brand-gray-800: #1f2937;
+    --brand-gray-900: #111827;
+
+    /* Variables de shadcn/ui existentes */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
-
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -97,5 +104,96 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Clases utilitarias personalizadas para el sistema de colores */
+@layer utilities {
+  /* Colores de texto */
+  .text-brand-primary {
+    color: var(--brand-rose-primary);
+  }
+  
+  .text-brand-secondary {
+    color: var(--brand-purple-primary);
+  }
+  
+  .text-brand-gradient {
+    background: linear-gradient(to right, var(--brand-rose-primary), var(--brand-purple-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Colores de fondo */
+  .bg-brand-primary {
+    background-color: var(--brand-rose-primary);
+  }
+  
+  .bg-brand-secondary {
+    background-color: var(--brand-purple-primary);
+  }
+  
+  .bg-brand-gradient {
+    background: linear-gradient(to right, var(--brand-rose-primary), var(--brand-purple-primary));
+  }
+  
+  .bg-brand-gradient-light {
+    background: linear-gradient(135deg, var(--brand-rose-50) 0%, var(--brand-white) 50%, var(--brand-purple-50) 100%);
+  }
+
+  .bg-brand-rose-50 {
+    background-color: var(--brand-rose-50);
+  }
+
+  .bg-brand-rose-100 {
+    background-color: var(--brand-rose-100);
+  }
+
+  .bg-brand-purple-100 {
+    background-color: var(--brand-purple-100);
+  }
+
+  .bg-brand-white {
+    background-color: var(--brand-white);
+  }
+
+  /* Colores de borde */
+  .border-brand-primary {
+    border-color: var(--brand-rose-primary);
+  }
+  
+  .border-brand-secondary {
+    border-color: var(--brand-purple-primary);
+  }
+
+  /* Estados hover */
+  .hover-brand-primary:hover {
+    color: var(--brand-rose-primary);
+  }
+  
+  .hover-brand-bg:hover {
+    background-color: var(--brand-rose-50);
+  }
+
+  .hover-border-brand-primary:hover {
+    border-color: var(--brand-rose-primary);
+  }
+
+  /* Colores de texto grises */
+  .text-brand-gray-600 {
+    color: var(--brand-gray-600);
+  }
+
+  .text-brand-gray-700 {
+    color: var(--brand-gray-700);
+  }
+
+  .text-brand-gray-800 {
+    color: var(--brand-gray-800);
+  }
+
+  .text-brand-gray-400 {
+    color: var(--brand-gray-400);
   }
 }

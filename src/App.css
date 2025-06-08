@@ -1,36 +1,4 @@
 
-:root {
-  /* Colores principales de la peluquería */
-  --primary-rose: #f43f5e;
-  --primary-purple: #a21caf;
-  --primary-pink: #ec4899;
-  
-  /* Gradientes de rosa */
-  --rose-50: #fff1f2;
-  --rose-100: #ffe4e6;
-  --rose-300: #fda4af;
-  --rose-400: #fb7185;
-  --rose-500: #f43f5e;
-  --rose-600: #e11d48;
-  --rose-700: #be123c;
-  
-  /* Gradientes de púrpura */
-  --purple-50: #faf5ff;
-  --purple-100: #f3e8ff;
-  --purple-500: #a21caf;
-  --purple-600: #9333ea;
-  --purple-700: #7e22ce;
-  
-  /* Colores base */
-  --white: #ffffff;
-  --gray-100: #f3f4f6;
-  --gray-400: #9ca3af;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
-}
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -44,9 +12,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -72,49 +42,4 @@
 
 .read-the-docs {
   color: #888;
-}
-
-/* Clases personalizadas para los colores */
-.text-brand-primary {
-  color: var(--primary-rose);
-}
-
-.text-brand-secondary {
-  color: var(--primary-purple);
-}
-
-.text-brand-gradient {
-  background: linear-gradient(to right, var(--primary-rose), var(--primary-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.bg-brand-primary {
-  background-color: var(--primary-rose);
-}
-
-.bg-brand-secondary {
-  background-color: var(--primary-purple);
-}
-
-.bg-brand-gradient {
-  background: linear-gradient(to right, var(--primary-rose), var(--primary-purple));
-}
-
-.bg-gradient-brand {
-  background: linear-gradient(135deg, var(--rose-50) 0%, var(--white) 50%, var(--purple-50) 100%);
-}
-
-.border-brand-primary {
-  border-color: var(--primary-rose);
-}
-
-.hover-brand-primary:hover {
-  color: var(--primary-rose);
-}
-
-.hover-brand-bg:hover {
-  background-color: var(--rose-50);
 }
