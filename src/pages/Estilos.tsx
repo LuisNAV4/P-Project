@@ -17,7 +17,7 @@ const Estilos = () => {
   const categories = [...new Set(hairStyles.map(style => style.category))];
 
   return (
-    <div className="min-h-screen bg-brand-gradient-light">
+    <div className="min-h-screen bg-brand-primary">
       {/* Header */}
       <header className="bg-brand-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -38,7 +38,7 @@ const Estilos = () => {
           </div>
           <Button 
             onClick={() => navigate('/')}
-            className="bg-brand-gradient hover:opacity-90 text-brand-white"
+            className="bg-brand-gradient hover:opacity-90 text-white"
           >
             Reservar Cita
           </Button>
@@ -100,7 +100,7 @@ const Estilos = () => {
                     <Heart className="h-4 w-4 text-brand-primary" />
                   </div>
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-6 bg-white">
                   <h4 className="text-xl font-bold mb-2 text-brand-gray-800">{style.name}</h4>
                   <p className="text-brand-gray-600 mb-4 text-sm leading-relaxed">{style.description}</p>
                   <div className="flex justify-between items-center">
@@ -145,7 +145,7 @@ const Estilos = () => {
             <Button 
               size="lg"
               variant="outline"
-              className="border-brand-white text-brand-white hover:bg-brand-white/10 transform hover:scale-105 transition-all duration-200"
+              className="border-brand-black text-brand-black hover:bg-brand-white/10 transform hover:scale-105 transition-all duration-200"
               onClick={handleVolver}
             >
               Volver al Inicio

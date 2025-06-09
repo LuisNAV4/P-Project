@@ -6,14 +6,15 @@
 @layer base {
   :root {
     /* Colores del sistema de peluquería */
-    --brand-rose-primary: #f43f5e;
-    --brand-purple-primary: #a21caf;
-    --brand-pink-primary: #ec4899;
+    --brand-rose-primary: #D87B52;
+    --brand-purple-primary: #e45706a8;
+    --brand-pink-primary: #06e449;
     
     /* Gradientes y tonos de rosa */
-    --brand-rose-50: #fff1f2;
-    --brand-rose-100: #ffe4e6;
-    --brand-rose-300: #fda4af;
+    --brand-bg-primary: #F3F2EE;
+    --brand-bg-secondary: #050505;
+    --brand-solid: #3C4150;
+    --brand-rose-300: #fda4ae2f;
     --brand-rose-400: #fb7185;
     --brand-rose-500: #f43f5e;
     --brand-rose-600: #e11d48;
@@ -97,6 +98,10 @@
   }
 }
 
+body {
+  font-family: 'Inter', Cambria, sans-serif;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -118,24 +123,37 @@
     color: var(--brand-purple-primary);
   }
   
+  .text-brand-white{
+    color: var(--brand-white);
+  }
+
   .text-brand-gradient {
-    background: linear-gradient(to right, var(--brand-rose-primary), var(--brand-purple-primary));
+    background:  var(--brand-rose-primary);
+     /*(var(--brand-purple-primary));*/
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
+  .bg-reserva-primary{
+    background-color: var(--brand-solid);
+  }
+
   /* Colores de fondo */
   .bg-brand-primary {
-    background-color: var(--brand-rose-primary);
+    background-color: var(--brand-bg-primary);
   }
   
   .bg-brand-secondary {
-    background-color: var(--brand-purple-primary);
+    background-color: var(--brand-bg-secondary);
   }
   
   .bg-brand-gradient {
-    background: linear-gradient(to right, var(--brand-rose-primary), var(--brand-purple-primary));
+    background-color: var(--brand-rose-primary);
+  }
+
+  .bg-primary-gradient{
+    background-color: var(--brand-bg-primary);
   }
   
   .bg-brand-gradient-light {
