@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
+  base: "https://luisnav4.github.io/P-Project",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
